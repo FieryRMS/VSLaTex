@@ -42,13 +42,13 @@
 	],
 	// Remove / comment the next 3 lines to remove dark view for pdf
 	// "latex-workshop.view.pdf.color.dark.pageColorsBackground": "#171717", // For Dark Viewwer
-	// "latex-workshop.view.pdf.color.dark.pageColorsForeground": "#FFFFFF", // For Dark Viewer
+	"latex-workshop.view.pdf.color.dark.pageColorsForeground": "#FFFFFF", // For Dark Viewer
 	// "latex-workshop.view.pdf.color.dark.backgroundColor": "#171717", // For Dark Viewer
 	"latex-workshop.latex.autoBuild.run": "onFileChange",
 	"editor.formatOnSave": true,
 	//"latex-workshop.latex.watch.delay": 500, // Deprecated. See here: https://github.com/sanjib-sen/WebLaTex/issues/8
 	"latex-workshop.codespaces.portforwarding.openDelay": 20000,
-	"latex-workshop.formatting.latex": "tex-fmt",
+	"latex-workshop.formatting.latex": "latexindent",
 	"latex-workshop.latex.tools": [
 		{
 			"name": "latexmk",
