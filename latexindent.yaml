@@ -2,4 +2,4 @@ modifyLineBreaks:
     textWrapOptions:
         columns: 80
         blocksFollow:
-            other: \\\]|\\item\[.+?\]|\\item
+            other: \\\]|\\item\[.+?\]|\\item|\\inputminted.+?\}.+?\}
