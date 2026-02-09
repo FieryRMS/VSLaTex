@@ -32,7 +32,7 @@
 	"latex-workshop.latex.outDir": "./PDF",
 	"latex-workshop.latex.autoClean.run": "onBuilt",
 	"latex-workshop.latex.build.forceRecipeUsage": false,
-	"latex-workshop.synctex.afterBuild.enabled": true,
+	"latex-workshop.synctex.afterBuild.enabled": false,
 	"latex-workshop.view.pdf.viewer": "tab",
 	"latex-workshop.latex.clean.subfolder.enabled": true,
 	"latex-workshop.latex.magic.args": [
