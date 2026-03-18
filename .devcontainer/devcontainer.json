@@ -5,6 +5,9 @@
 	"image": "sanjibsen/weblatex:latest", // https://github.com/sanjib-sen/weblatex-docker
 	"remoteUser": "root", // Do not change this
 	"features": {},
+	"postCreateCommand": {
+		"pygmentize": "pip install Pygments"
+	},
 	"customizations": {
 		"vscode": {
 			"extensions": [
