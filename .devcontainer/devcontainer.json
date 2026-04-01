@@ -2,17 +2,19 @@
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.245.2/containers/ubuntu
 {
 	"name": "weblatex",
-	"image": "sanjibsen/weblatex:latest", // https://github.com/sanjib-sen/weblatex-docker
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
 	"remoteUser": "root", // Do not change this
 	"features": {},
 	"postCreateCommand": {
-		"pygmentize": "pip install Pygments"
+		"uv": "uv sync",
+		"apt": "apt update && apt install -y inkscape"
 	},
 	"customizations": {
 		"vscode": {
 			"extensions": [
 				"James-Yu.latex-workshop",
-				"GitHub.copilot",
 				"ms-vsliveshare.vsliveshare",
 				"valentjn.vscode-ltex"
 			]

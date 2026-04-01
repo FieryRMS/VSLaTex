@@ -2,3 +2,6 @@ PDF/
 _minted-*
 ltex.*.txt
 *.zip
+.venv
+svg-inkscape/
+~$*.pptx
