@@ -2,7 +2,7 @@ FROM ghcr.io/astral-sh/uv:latest AS uv
 
 
 FROM texlive/texlive:latest-full AS tex
-RUN apt-get update && tlmgr update --self
+RUN apt-get update
 
 
 FROM tex AS texuv
