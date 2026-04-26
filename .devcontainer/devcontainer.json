@@ -16,7 +16,8 @@
 			"extensions": [
 				"James-Yu.latex-workshop",
 				"ms-vsliveshare.vsliveshare",
-				"valentjn.vscode-ltex"
+				"valentjn.vscode-ltex",
+				"Anthropic.claude-code"
 			]
 		}
 	}

@@ -12,6 +12,10 @@ COPY --from=uv /uv /uvx /bin/
 FROM texuv AS vslatex
 RUN apt-get update && apt-get install -y \
     perl \
+    curl \
+    && curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - \
+    && apt-get install -y nodejs \
+    && npm install -g @anthropic-ai/claude-code \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean \
     && apt-get autoremove -y \
