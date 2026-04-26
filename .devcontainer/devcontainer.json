@@ -14,6 +14,11 @@
 	"mounts": [
 		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.claude,target=/root/.claude,type=bind,consistency=cached"
 	],
+	"remoteEnv": {
+		"EDITOR": "code --wait",
+		"VISUAL": "code --wait",
+		"GIT_EDITOR": "code --wait"
+	},
 	"customizations": {
 		"vscode": {
 			"extensions": [
