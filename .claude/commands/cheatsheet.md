@@ -22,3 +22,5 @@
 - No multi-line display math
 - Never use any unicode characters (e.g., arrows, bullets) - stick to LaTeX commands only
 - avoid using \texttt{} or \verb|| or similar non-breaking formats for long expressions, as it will overflow
+- Don't read cheatsheet.cls file, it is unnecessary to know how it works.
+- Don't attempt to render the document

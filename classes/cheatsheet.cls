@@ -46,15 +46,30 @@
 \SetupKeyvalOptions{ family=cs,
     prefix=cs@ }
 \DeclareStringOption[4]{columns}
+\DeclareStringOption[6pt]{fontsize}
 \DeclareVoidOption{twocolumn}{\ClassError{CheatSheet}{'twocolumn' is not
         supported, use 'columns=2' instead!}{Because I can not 'catch' an
         option, I have to emit an Error; if article gets the option
         'twocolumn', the whole layout will be corrupted!}}
 \DeclareDefaultOption{\PassOptionsToClass{\CurrentOptionKey}{article}}
+
 \ProcessKeyvalOptions*
 
 
 \LoadClass{article}
+% Set font size using fontsize package if available, fallback to standard
+\AtBeginDocument{
+    \IfFileExists{fontsize.sty}{%
+        \RequirePackage[fontsize=\cs@fontsize]{fontsize}
+    }{%
+        \begingroup
+        \def\@tempa{\cs@fontsize}
+        \ifx\@tempa\@empty\else
+            \fontsize{\cs@fontsize}{\dimexpr\cs@fontsize+2pt\relax}\selectfont
+        \fi
+        \endgroup
+    }
+}
 \PassOptionsToPackage{T1}{fontenc}
 \RequirePackage{hyperref}
 \RequirePackage{fontenc}
@@ -104,6 +119,17 @@
     \begin{multicols*}{\cs@columns}}
         \AtEndEnvironment{document}{\end{multicols*}}
 \AtBeginDocument{
+    \setlength{\tabcolsep}{0pt}
+    % User's requested tocloft and document settings
+    \@ifpackageloaded{tocloft}{% Only set if tocloft is loaded
+        \setlength{\cftbeforesecskip}{0pt}
+        \setlength{\cftbeforesubsecskip}{0pt}
+        \setlength{\cftsecnumwidth}{10pt}
+        \setlength{\cftsecindent}{0pt}
+    }{}
+    \raggedcolumns
+    \setcounter{tocdepth}{2}
+    \renewcommand{\contentsname}{}
     \RaggedRight
     %footnotesize
 }
